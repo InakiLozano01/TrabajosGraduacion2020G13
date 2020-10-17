@@ -4,7 +4,7 @@ package autores.modelos;
 public class Profesor {
     
    private int dni;
-   private String cargo;
+   private Cargo cargo;
    private String clave;
    private String nombres;
    private String apellidos; 
@@ -17,13 +17,13 @@ public class Profesor {
         System.out.println(nombres);
         System.out.println(apellidos);
     }
-    public Profesor (int dni, String cargo, String clave, String nombres, String apellidos)
+    public Profesor (int dni, Cargo cargo, String clave, String nombres, String apellidos)
    {
-       this.dni=dni;
-       this.cargo=cargo;
-       this.clave=clave;
-       this.nombres=nombres;
-       this.apellidos=apellidos;
+       this.dni = dni;
+       this.cargo = cargo;
+       this.clave = clave;
+       this.nombres = nombres;
+       this.apellidos = apellidos;
    }
    
 }
