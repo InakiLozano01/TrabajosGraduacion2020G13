@@ -1,4 +1,5 @@
 //probando smartgit
+//probando smartgit v2
 package autores.modelos;
 
 public class Alumno {
