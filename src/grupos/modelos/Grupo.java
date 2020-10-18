@@ -1,9 +1,12 @@
 
 package grupos.modelos;
 
+import java.util.ArrayList;
+
 public class Grupo {
     private String nombre;
     private String descripcion;
+    private ArrayList<MiembroEnGrupo> meg;
     
     public void mostrar()
     {

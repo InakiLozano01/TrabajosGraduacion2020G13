@@ -1,6 +1,7 @@
 
 package autores.modelos;
 
+import grupos.modelos.MiembroEnGrupo;
 import java.util.ArrayList;
 
 public class Profesor {
