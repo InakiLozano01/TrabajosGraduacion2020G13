@@ -52,4 +52,16 @@ public class Publicacion {
         System.out.println("Resumen: " +resumen);
     }
     
+    @Override
+    public boolean equals (Object obj)
+    {
+        if(obj==null)
+            return false;
+        if(this==obj)
+            return true;
+        if(this.titulo==((Publicacion)obj).titulo)
+            return true;
+        else return false;
+        
+    }
 }

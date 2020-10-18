@@ -4,31 +4,34 @@ package autores.modelos;
 import grupos.modelos.MiembroEnGrupo;
 import java.util.ArrayList;
 
-public class Profesor {
-    
-   private int dni;
+public class Profesor extends Autor {
+   
    private Cargo cargo;
-   private String clave;
-   private String nombres;
-   private String apellidos; 
    private ArrayList<MiembroEnGrupo> meg;
     
+   @Override
    public void mostrar()
     {
-        System.out.println("DNI:"+dni);
+        super.mostrar();
         System.out.println("Cargo:"+cargo);
-        System.out.println("Clave:"+clave);
-        System.out.println("Nombres:"+nombres);
-        System.out.println("Apellidos:"+apellidos);
         
     }
-    public Profesor (int dni, Cargo cargo, String clave, String nombres, String apellidos)
+    public Profesor (int dni, String clave, String nombres, String apellidos, Cargo cargo)
    {
-       this.dni = dni;
+       super(dni, clave, nombres, apellidos);
        this.cargo = cargo;
-       this.clave = clave;
-       this.nombres = nombres;
-       this.apellidos = apellidos;
    }
    
+    @Override
+    public boolean equeals (Object obj)
+    {
+        if(obj==null)
+            return false;
+        if(this==obj)
+            return true;
+        if(this.dni==((Profesor)obj).dni)
+            return true;
+        else return false;
+        
+    }
 }

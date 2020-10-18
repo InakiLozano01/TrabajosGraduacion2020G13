@@ -1,30 +1,42 @@
-//probando smartgit
-//probando smartgit v2
+
 package autores.modelos;
 
-public class Alumno {
+public class Alumno extends Autor {
     
-   private int dni;
    private String cx;
-   private String clave;
-   private String nombres;
-   private String apellidos;
-    
+   
    public void mostrar()
-    {
-        System.out.println(dni);
-        System.out.println(cx);
-        System.out.println(clave);
-        System.out.println(nombres);
-        System.out.println(apellidos);
+    {  
+        super.mostrar();
+        System.out.println(cx);  
     }
    
-   public Alumno (int dni, String cx, String clave, String nombres, String apellidos)
+   public Alumno (int dni, String clave, String nombres, String apellidos, String cx)
    {
-       this.dni=dni;
+       super(dni, clave, nombres, apellidos);
        this.cx=cx;
-       this.clave=clave;
-       this.nombres=nombres;
-       this.apellidos=apellidos;
+   }
+   
+   @Override
+   public boolean equals (Object obj)
+   {
+       if(obj==null)
+           return false;
+       if(this==obj)
+           return true;
+       if(this.dni==((Alumno)obj).dni)
+       {
+           return true;
+       }else
+       {
+           if(this.cx==((Alumno)obj).cx)
+           {
+           return true;
+           }
+           else
+           {
+               return false;
+           }  
+       }        
    }
 }
