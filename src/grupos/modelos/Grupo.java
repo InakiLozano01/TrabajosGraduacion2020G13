@@ -19,4 +19,16 @@ public class Grupo {
         this.nombre=nombre;
         this.descripcion=descripcion;
     }
+    
+    @Override
+    public boolean equals(Object obj)
+    {
+        if(obj==null)
+            return false;
+        if(this==obj)
+            return true;
+        if(this.nombre==((Grupo)obj).nombre)
+            return true;
+        else return false;
+    }
 }
