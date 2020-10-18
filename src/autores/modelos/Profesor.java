@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class Profesor extends Autor {
    
    private Cargo cargo;
-   private ArrayList<MiembroEnGrupo> meg;
     
    @Override
    public void mostrar()

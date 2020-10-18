@@ -1,9 +1,13 @@
 
 package autores.modelos;
 
+import grupos.modelos.MiembroEnGrupo;
+import java.util.ArrayList;
+
 public class Alumno extends Autor {
     
    private String cx;
+
    
    public void mostrar()
     {  
