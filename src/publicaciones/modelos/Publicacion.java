@@ -1,6 +1,7 @@
 
 package publicaciones.modelos;
 
+import grupos.modelos.MiembroEnGrupo;
 import grupos.modelos.Rol;
 import idiomas.modelos.Idioma;
 import java.time.LocalDate;
@@ -19,11 +20,12 @@ public class Publicacion {
     private Lugar lugar;
     private Idioma idioma;
     private Rol rol;
+    private MiembroEnGrupo meg;
     
     public void mostrar ()
     {
         System.out.println("Titulo: " +titulo);
-        System.out.println("Autor: " +apellido+ "," +nombre);
+        System.out.println("Autor: " +apellidos+ "," +nombres);
         System.out.println("Grupo: " +grupo);
         System.out.println("Fecha de publicacion: " +fechadepublicacion);
         System.out.println("Tipo: " +tipo);

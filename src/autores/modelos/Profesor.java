@@ -1,6 +1,8 @@
 
 package autores.modelos;
 
+import java.util.ArrayList;
+
 public class Profesor {
     
    private int dni;
@@ -8,6 +10,7 @@ public class Profesor {
    private String clave;
    private String nombres;
    private String apellidos; 
+   private ArrayList<MiembroEnGrupo> meg;
     
    public void mostrar()
     {
