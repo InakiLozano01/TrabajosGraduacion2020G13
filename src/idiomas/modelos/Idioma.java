@@ -13,4 +13,9 @@ public class Idioma {
     {
         this.nombre=nombre;
     }
+    
+    public void asignar (String n)
+    {
+        this.nombre=n;
+    }
 }

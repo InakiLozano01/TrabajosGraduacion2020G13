@@ -22,17 +22,32 @@ public class Publicacion {
     private Rol rol;
     private MiembroEnGrupo meg;
     
+    public Publicacion(String t, LocalDate fp, String e, String r, Tipo tip, ArrayList<PalabraClave> pc, Lugar l, Idioma i, Rol rol, MiembroEnGrupo meg)
+    {
+        this.titulo=t;
+        this.fechadepublicacion=fp;
+        this.enlace=e;
+        this.resumen=r;
+        this.tipo=tip;
+        this.palabrasclaves=pc;
+        this.lugar=l;
+        this.idioma=i;
+        this.rol=rol;
+        this.meg=meg;
+    }
     public void mostrar ()
     {
         System.out.println("Titulo: " +titulo);
-        System.out.println("Autor: " +apellidos+ "," +nombres);
-        System.out.println("Grupo: " +grupo);
+        System.out.println("Autor: ");
         System.out.println("Fecha de publicacion: " +fechadepublicacion);
         System.out.println("Tipo: " +tipo);
         System.out.println("Idioma: " +idioma);
         System.out.println("Palabras Claves");
         System.out.println("----------");
-        System.out.println("");//palabras claves
+        for(PalabraClave i: palabrasclaves)
+        {
+            i.mostrar();
+        }
         System.out.println("Enlace: " +enlace);
         System.out.println("Resumen: " +resumen);
     }

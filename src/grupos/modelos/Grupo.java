@@ -10,8 +10,8 @@ public class Grupo {
     
     public void mostrar()
     {
-        System.out.println(nombre);
-        System.out.println(descripcion);
+        System.out.println("Nombre:"+nombre);
+        System.out.println("Descripcion:"+descripcion);
     }
     
     public Grupo (String nombre, String descripcion)

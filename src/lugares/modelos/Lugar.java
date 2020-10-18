@@ -14,5 +14,10 @@ public class Lugar {
     {
         this.nombre=nombre;
     }
+   
+    public void asignar(String n)
+    {
+        this.nombre=n;
+    }
 }
 

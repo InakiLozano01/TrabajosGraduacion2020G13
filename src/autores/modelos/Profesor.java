@@ -15,11 +15,12 @@ public class Profesor {
     
    public void mostrar()
     {
-        System.out.println(dni);
-        System.out.println(cargo);
-        System.out.println(clave);
-        System.out.println(nombres);
-        System.out.println(apellidos);
+        System.out.println("DNI:"+dni);
+        System.out.println("Cargo:"+cargo);
+        System.out.println("Clave:"+clave);
+        System.out.println("Nombres:"+nombres);
+        System.out.println("Apellidos:"+apellidos);
+        
     }
     public Profesor (int dni, Cargo cargo, String clave, String nombres, String apellidos)
    {
