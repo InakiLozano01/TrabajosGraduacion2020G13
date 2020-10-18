@@ -1,6 +1,7 @@
 
 package grupos.modelos;
 
+import autores.modelos.Autor;
 import java.util.ArrayList;
 
 public class Grupo {
@@ -19,8 +20,7 @@ public class Grupo {
         this.nombre=nombre;
         this.descripcion=descripcion;
     }
-    
-    @Override
+   
     public boolean equals(Object obj)
     {
         if(obj==null)
@@ -31,4 +31,16 @@ public class Grupo {
             return true;
         else return false;
     }
+    
+    public void verMiembros()
+    {
+        for(MiembroEnGrupo m: meg)
+            m.mostrarmiembro();
+    }
+    
+    public void agregarMiembro(Autor a, Rol r)
+    {
+        
+    }
+    
 }

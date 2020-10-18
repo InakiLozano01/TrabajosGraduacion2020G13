@@ -4,24 +4,26 @@ package grupos.modelos;
 import autores.modelos.*;
 
 public class MiembroEnGrupo {
-    private Profesor profesor;
     private Grupo grupo;
     private Rol rol;
-    private Alumno alumno;
+    private Autor autor;
 
  
-public MiembroEnGrupo (Profesor p, Grupo g, Rol r, Alumno a)
+public MiembroEnGrupo (Autor a, Grupo g, Rol r)
 {
-this.profesor = p;
+this.autor=a;
 this.grupo = g;
 this.rol = r;  
-this.alumno=a;
+
 }
 
 public void mostrar()
 {
-    profesor.mostrar();
+    autor.mostrar();
     grupo.mostrar();
 }
-
+public void mostrarmiembro()
+{
+    autor.mostrar();
+}
 }

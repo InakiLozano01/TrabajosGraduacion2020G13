@@ -12,28 +12,26 @@ import tipos.modelos.Tipo;
 
 public class Publicacion {
     private String titulo;
+    private MiembroEnGrupo meg;  
     private LocalDate fechadepublicacion;
+    private Tipo tipo;
+    private Idioma idioma;
+    private Lugar lugar;
+    private ArrayList<PalabraClave> palabrasclaves;
     private String enlace;
     private String resumen;
-    private Tipo tipo;
-    private ArrayList<PalabraClave> palabrasclaves;
-    private Lugar lugar;
-    private Idioma idioma;
-    private Rol rol;
-    private MiembroEnGrupo meg;
     
-    public Publicacion(String t, LocalDate fp, String e, String r, Tipo tip, ArrayList<PalabraClave> pc, Lugar l, Idioma i, Rol rol, MiembroEnGrupo meg)
+    public Publicacion(String t, MiembroEnGrupo meg, LocalDate fp, Tipo tip, Idioma i, Lugar l, ArrayList<PalabraClave> pc, String e, String r)
     {
         this.titulo=t;
+        this.meg=meg;
         this.fechadepublicacion=fp;
+        this.tipo=tip;
+        this.idioma=i;
+        this.lugar=l;
+        this.palabrasclaves=pc;
         this.enlace=e;
         this.resumen=r;
-        this.tipo=tip;
-        this.palabrasclaves=pc;
-        this.lugar=l;
-        this.idioma=i;
-        this.rol=rol;
-        this.meg=meg;
     }
     public void mostrar ()
     {
