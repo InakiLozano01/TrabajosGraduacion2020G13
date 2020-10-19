@@ -17,6 +17,10 @@ this.grupo = g;
 this.rol = r;  
 
 }
+public void mostrarRol()
+{
+    System.out.println("Rol: "+rol);
+}
 
 public void mostrarGrupos()
 {
@@ -24,7 +28,7 @@ public void mostrarGrupos()
 }
 public void mostrar()
 {
-    autor.mostrar();
+    autor.verNyA();
     grupo.mostrar();
 }
 public void mostrarmiembro()

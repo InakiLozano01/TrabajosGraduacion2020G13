@@ -36,10 +36,25 @@ public class Publicacion {
     public void mostrar ()
     {
         System.out.println("Titulo: " +titulo);
-        System.out.println("Autor: ");
+        
+        System.out.print("Autor: ");
+        meg.mostrarmiembro();
+        
+        meg.verGrupo().mostrarNombre();
+        
+        meg.mostrarRol();
+        
         System.out.println("Fecha de publicacion: " +fechadepublicacion);
-        System.out.println("Tipo: " +tipo);
-        System.out.println("Idioma: " +idioma);
+        
+        System.out.print("Tipo: ");
+        tipo.mostrar();
+        
+        System.out.print("Idioma: ");
+        idioma.mostrar();
+        
+        System.out.print("Lugar: ");
+        lugar.mostrar();
+        
         System.out.println("Palabras Claves");
         System.out.println("----------");
         for(PalabraClave i: palabrasclaves)

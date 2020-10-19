@@ -89,7 +89,7 @@ public class ControladorPrincipal {
         //dni repetido con otro alumno
         Autor alumno7 = new Alumno(50, "Apellido7", "Nombre7", "Clave7", "7");
         //dni repetido con un profesor
-        Autor alumno8 = new Alumno(8, "Apellido8", "Nombre8", "Clave8", "8");
+        Autor alumno8 = new Alumno(8, "Apellido8", "Nombre8", "Clave8", "5");
         //cx repetido con un alumno
         
         if (!autores.contains(profesor1))
@@ -137,7 +137,7 @@ public class ControladorPrincipal {
         profesor1.agregarGrupo(grupo2, Rol.COLABORADOR);
         profesor1.agregarGrupo(grupo2, Rol.ADMINISTRADOR); //grupo repetido
         profesor1.mostrar();
-        profesor2.mostrar();
+        alumno1.mostrar();
         
         /*
         Tomar el grupo al que se le agregaron los 2 autores como miembros, 
@@ -198,7 +198,10 @@ public class ControladorPrincipal {
             tipos.add(tipo6);
         
         for(Tipo t : tipos)
-            System.out.println(t);
+        {
+            System.out.print("Tipo: ");
+            t.mostrar();
+        }
         
         System.out.println("------------------LUGARES------------------");
         Lugar lugar1 = new Lugar("Lugar 1");
@@ -222,7 +225,10 @@ public class ControladorPrincipal {
             lugares.add(lugar6);
         
         for(Lugar l : lugares)
-            System.out.println(l);
+        {
+            System.out.print("Lugar: ");
+            l.mostrar();
+        }
         
         System.out.println("------------------IDIOMAS------------------");
         Idioma idioma1 = new Idioma("Idioma 1");
@@ -246,7 +252,11 @@ public class ControladorPrincipal {
             idiomas.add(idioma6);
         
         for(Idioma i : idiomas)
-            System.out.println(i);        
+        {
+            System.out.print("Idioma: ");
+            i.mostrar();
+        }
+                    
        
         System.out.println("------------------PALABRAS CLAVE------------------");
         PalabraClave palabraClave1 = new PalabraClave("PalabraClave1");
@@ -270,7 +280,11 @@ public class ControladorPrincipal {
             palabrasClaves.add(palabraClave6);
         
         for(PalabraClave pc : palabrasClaves)
-            System.out.println(pc);  
+        {
+            System.out.print("Palabra Clave: ");
+            pc.mostrar();
+        }
+             
         
         System.out.println("------------------PUBLICACIONES------------------");
           //PUBLICACION 1

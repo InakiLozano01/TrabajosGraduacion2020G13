@@ -12,22 +12,22 @@ public abstract class Autor {
     protected String apellidos;
     protected ArrayList<MiembroEnGrupo> meg = new ArrayList<>();
     
-    public Autor (int d, String c, String n, String a, ArrayList<MiembroEnGrupo> m)
+    public Autor (int d, String a, String n, String c)
     {
         this.dni=d;
-        this.clave=c;
-        this.nombres=n;
         this.apellidos=a;
-        this.meg=m;
+        this.nombres=n;
+        this.clave=c;
     }
     
+    public void verNyA()
+    {
+        System.out.println("Nombre:"+nombres);
+        System.out.println("Apellido"+apellidos);
+    }
     public void mostrar ()
     {
         System.out.println("["+dni+"]"+apellidos+", "+nombres);
-        for(MiembroEnGrupo m: meg)
-        {
-            m.mostrar();
-        }
     }
     
     public void verGrupos()
@@ -53,14 +53,13 @@ public abstract class Autor {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
+
         final Autor other = (Autor) obj;
         if (this.dni != other.dni) {
             return false;
         }
         return true;
+        
     }
     
     public void agregarGrupo(Grupo g, Rol r)

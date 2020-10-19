@@ -11,10 +11,12 @@ public class Grupo {
     
     public void mostrar()
     {
-           for(MiembroEnGrupo m: meg)
-           {
-               m.mostrarMiembroyRol();
-           }
+        System.out.println("Grupo: "+nombre);
+        System.out.println("Descripcion: "+descripcion);
+        for(MiembroEnGrupo m: meg)
+        {
+            m.mostrarMiembroyRol();
+        }
     }
     
     public void mostrarNombre()
@@ -68,7 +70,7 @@ public class Grupo {
     
     public boolean esSuperAdministradores()
             {
-                return this.nombre.equalsIgnoreCase("SuperAdministradores");
+                return this.nombre.equalsIgnoreCase("Super Administradores");
             }
     
     public boolean tieneMiembros()

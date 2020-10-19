@@ -12,12 +12,12 @@ public class Profesor extends Autor {
    public void mostrar()
     {
         super.mostrar();
-        System.out.println("Cargo:"+cargo);
+        System.out.println("Cargo: "+cargo);
         
     }
-    public Profesor (int dni, String clave, String nombres, String apellidos, Cargo cargo, ArrayList<MiembroEnGrupo> m)
+    public Profesor (int dni, String apellidos, String nombres, String clave, Cargo cargo)
    {
-       super(dni, clave, nombres, apellidos, m);
+       super(dni, apellidos, nombres, clave);
        this.cargo = cargo;
    }
 }
