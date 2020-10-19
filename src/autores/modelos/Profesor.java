@@ -1,7 +1,7 @@
 
 package autores.modelos;
 
-import grupos.modelos.MiembroEnGrupo;
+import grupos.modelos.*;
 import java.util.ArrayList;
 
 public class Profesor extends Autor {
@@ -15,9 +15,9 @@ public class Profesor extends Autor {
         System.out.println("Cargo:"+cargo);
         
     }
-    public Profesor (int dni, String clave, String nombres, String apellidos, Cargo cargo)
+    public Profesor (int dni, String clave, String nombres, String apellidos, Cargo cargo, ArrayList<MiembroEnGrupo> m)
    {
-       super(dni, clave, nombres, apellidos);
+       super(dni, clave, nombres, apellidos, m);
        this.cargo = cargo;
    }
 }

@@ -11,8 +11,15 @@ public class Grupo {
     
     public void mostrar()
     {
-        System.out.println("Nombre:"+nombre);
-        System.out.println("Descripcion:"+descripcion);
+           for(MiembroEnGrupo m: meg)
+           {
+               m.mostrarMiembroyRol();
+           }
+    }
+    
+    public void mostrarNombre()
+    {
+        System.out.println("Grupo:"+nombre);
     }
     
     public Grupo (String nombre, String descripcion)
@@ -44,9 +51,28 @@ public class Grupo {
         if(this.meg.contains(m)==false)
         {
             this.meg.add(m);
-            a.agregarGrupo();
+            a.agregarGrupo(this,r);
         }
             
     }
     
+    
+    public void quitarMiembro(Autor a)
+    {
+        MiembroEnGrupo m= new MiembroEnGrupo(a,this,null);
+                if(this.meg.contains(m)==true)
+                {
+                    this.meg.remove(m);
+                }
+    }
+    
+    public boolean esSuperAdministradores()
+            {
+                return this.nombre.equalsIgnoreCase("SuperAdministradores");
+            }
+    
+    public boolean tieneMiembros()
+    {
+        return this.meg.isEmpty();
+    }
 }

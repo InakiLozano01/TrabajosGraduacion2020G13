@@ -16,9 +16,9 @@ public class Alumno extends Autor {
         System.out.println(cx);  
     }
    
-   public Alumno (int dni, String clave, String nombres, String apellidos, String cx)
+   public Alumno (int dni, String clave, String nombres, String apellidos, String cx, ArrayList<MiembroEnGrupo> m)
    {
-       super(dni, clave, nombres, apellidos);
+       super(dni, clave, nombres, apellidos, m);
        this.cx=cx;
    }
    
