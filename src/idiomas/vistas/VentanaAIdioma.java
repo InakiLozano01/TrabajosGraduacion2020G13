@@ -89,7 +89,7 @@ public class VentanaAIdioma extends JDialog {
         Idioma idioma = new Idioma(nombre);
         this.idiomas.add(idioma);
         for(Idioma i : this.idiomas)
-            System.out.println(i);
+            i.mostrar();
     }//GEN-LAST:event_btnGuardarClic
 
 

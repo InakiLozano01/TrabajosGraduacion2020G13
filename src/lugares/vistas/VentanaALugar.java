@@ -89,7 +89,7 @@ public class VentanaALugar extends JDialog {
         Lugar lugar = new Lugar(nombre);
         this.lugares.add(lugar);
         for(Lugar l : this.lugares)
-            System.out.println(l);
+            l.mostrar();
     }//GEN-LAST:event_btnGuardarClic
 
 

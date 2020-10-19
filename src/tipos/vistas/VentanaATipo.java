@@ -91,7 +91,7 @@ public class VentanaATipo extends JDialog {
         Tipo tiposaux = new Tipo(nombre);
         this.tipos.add(tiposaux);
         for(Tipo l : this.tipos)
-            System.out.println(l);
+            l.mostrar();
     }//GEN-LAST:event_btnGuardarClic
 
 
