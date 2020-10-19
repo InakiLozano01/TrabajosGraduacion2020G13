@@ -3,6 +3,7 @@ package autores.modelos;
 
 import grupos.modelos.MiembroEnGrupo;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Alumno extends Autor {
     
@@ -24,23 +25,17 @@ public class Alumno extends Autor {
    @Override
    public boolean equals (Object obj)
    {
-       if(obj==null)
-           return false;
-       if(this==obj)
-           return true;
-       if(this.dni==((Alumno)obj).dni)
+       if(!super.equals(obj))
        {
-           return true;
-       }else
-       {
-           if(this.cx==((Alumno)obj).cx)
+           if(obj instanceof Alumno)
            {
-           return true;
+               return Objects.equals(this.cx, ((Alumno)obj).cx);
            }
            else
            {
                return false;
-           }  
-       }        
+           }
+       }
+       return true;
    }
 }

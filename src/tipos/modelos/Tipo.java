@@ -23,14 +23,31 @@ public class Tipo {
     }
     
     //Comparador
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
     @Override
     public boolean equals(Object obj) {
-        if(obj==null)
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
             return false;
-        if(this==obj)
-            return true;
-        if(this.nombre==((Tipo)obj).nombre)
-            return true;
-        else return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Tipo other = (Tipo) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
     }
+ 
+   
 }

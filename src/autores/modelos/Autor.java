@@ -24,9 +24,35 @@ public abstract class Autor {
     {
         System.out.println("["+dni+"]"+apellidos+", "+nombres);    
     }
-    
-    public boolean equeals (Object obj)
-    {
-        return false;
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + this.dni;
+        return hash;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Autor other = (Autor) obj;
+        if (this.dni != other.dni) {
+            return false;
+        }
+        return true;
+    }
+    
+    public void agregarGrupo()
+    {
+        
+    }
+    
 }
