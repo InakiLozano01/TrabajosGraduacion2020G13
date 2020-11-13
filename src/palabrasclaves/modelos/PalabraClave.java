@@ -4,6 +4,13 @@ package palabrasclaves.modelos;
 
 public class PalabraClave {
     private String nombre;
+
+    @Override
+    public String toString() {
+        return "PalabraClave{" + "nombre=" + nombre + '}';
+    }
+    
+    
     
     public void mostrar()
     {
@@ -11,6 +18,16 @@ public class PalabraClave {
     }
     
     public PalabraClave (String nombre)
+    {
+        this.nombre=nombre;
+    }
+    
+    public String verNombre()
+    {
+        return this.nombre;
+    }
+    
+    public void asignarNombre(String nombre)
     {
         this.nombre=nombre;
     }

@@ -3,6 +3,13 @@ package idiomas.modelos;
 
 public class Idioma {
     private String nombre;
+
+    @Override
+    public String toString() {
+        return "Idioma{" + "nombre=" + nombre + '}';
+    }
+    
+    
     
     public void mostrar()
      {
@@ -14,9 +21,14 @@ public class Idioma {
         this.nombre=nombre;
     }
     
-    public void asignar (String n)
+    public void asignarNombre(String n)
     {
         this.nombre=n;
+    }
+ 
+    public String verNombre()
+    {
+        return this.nombre;
     }
     
     @Override

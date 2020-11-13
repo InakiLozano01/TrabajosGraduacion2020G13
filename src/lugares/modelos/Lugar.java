@@ -4,6 +4,13 @@ package lugares.modelos;
 
 public class Lugar {
     private String nombre;
+
+    @Override
+    public String toString() {
+        return "Lugar{" + "nombre=" + nombre + '}';
+    }
+    
+    
     
     public void mostrar()
     {
@@ -15,9 +22,14 @@ public class Lugar {
         this.nombre=nombre;
     }
    
-    public void asignar(String n)
+    public void asignarNombre(String n)
     {
         this.nombre=n;
+    }
+    
+    public String verNombre()
+    {
+        return this.nombre;
     }
     
     @Override

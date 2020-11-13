@@ -6,6 +6,12 @@ import java.util.Objects;
 
 public class Tipo {
     private String nombre;
+
+    @Override
+    public String toString() {
+        return "Tipo{" + "nombre=" + nombre + '}';
+    }
+    
     
     public void mostrar()
     {
@@ -17,9 +23,14 @@ public class Tipo {
         this.nombre=nombre;
     }
     
-    public void asignar(String n)
+    public void asignarNombre(String n)
     {
         this.nombre=n;
+    }
+    
+    public String verNombre()
+    {
+        return this.nombre;    
     }
     
     //Comparador
