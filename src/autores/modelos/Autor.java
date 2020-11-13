@@ -99,7 +99,10 @@ public abstract class Autor {
         if(this.meg.contains(m)==false)
         {
             meg.add(m);
+            g.agregarMiembro(this, r);
         }
+        
+        
     }
     
     public void quitarGrupo(Grupo g)
@@ -108,6 +111,11 @@ public abstract class Autor {
         if(this.meg.contains(m)==true)
         {
             meg.remove(m);
+            g.quitarMiembro(this);
+        }
+        else
+        {
+            System.out.println("Grupo incorrecto, intente nuevamente");
         }
     }
     

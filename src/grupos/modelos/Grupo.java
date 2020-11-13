@@ -67,7 +67,12 @@ public class Grupo {
     
     public void agregarMiembro(Autor a, Rol r)
     {
-        MiembroEnGrupo m= new MiembroEnGrupo(a,this,r);
+        Rol admin_yesornot=r;
+        if(this.nombre.equals("Super Administradores"))
+        {
+            admin_yesornot=Rol.ADMINISTRADOR;
+        }
+        MiembroEnGrupo m= new MiembroEnGrupo(a,this,admin_yesornot);
         if(this.meg.contains(m)==false)
         {
             this.meg.add(m);
@@ -78,11 +83,19 @@ public class Grupo {
     
     public void quitarMiembro(Autor a)
     {
+        if(a!=null)
+        {
         MiembroEnGrupo m= new MiembroEnGrupo(a,this,null);
                 if(this.meg.contains(m)==true)
                 {
                     this.meg.remove(m);
+                    a.quitarGrupo(this);
                 }
+        }
+        else
+        {
+            System.out.println("Miembro incorrecto, intente nuevamente");
+        }
     }
     
     public boolean esSuperAdministradores()
