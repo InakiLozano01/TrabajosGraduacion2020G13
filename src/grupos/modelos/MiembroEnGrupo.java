@@ -17,36 +17,36 @@ this.grupo = g;
 this.rol = r;  
 
 }
-public void mostrarRol()
-{
-    System.out.println("Rol: "+rol);
-}
 
-public void mostrarGrupos()
-{
-    grupo.mostrar();
-}
-public void mostrar()
-{
-    autor.verNyA();
-    grupo.mostrar();
-}
-public void mostrarmiembro()
-{
-    autor.mostrar();
-}
-public void mostrarMiembroyRol()
-{
-    autor.mostrar();
-    System.out.println("Rol:"+rol);
-}
+    public Grupo getGrupo() {
+        return grupo;
+    }
 
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
 
-public Grupo verGrupo()
-{
-    return this.grupo;
-}
+    public Rol getRol() {
+        return rol;
+    }
 
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+
+    public void mostrar ()
+    {
+        System.out.println("\nAutor: "+autor.getNombres()+" "+autor.getApellidos()+"\nRol: "+rol);
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;

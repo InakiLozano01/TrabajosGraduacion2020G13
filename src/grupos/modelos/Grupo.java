@@ -13,17 +13,40 @@ public class Grupo {
     {
         System.out.println("Grupo: "+nombre);
         System.out.println("Descripcion: "+descripcion);
-        for(MiembroEnGrupo m: meg)
+        if(!meg.isEmpty())
         {
-            m.mostrarMiembroyRol();
+            System.out.println("Miembros: \n");
+            for(MiembroEnGrupo m: meg)
+            {
+                m.mostrar();
+            }    
         }
     }
-    
-    public void mostrarNombre()
-    {
-        System.out.println("Grupo:"+nombre);
+
+    public String getNombre() {
+        return nombre;
     }
-    
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public ArrayList<MiembroEnGrupo> getMeg() {
+        return meg;
+    }
+
+    public void setMeg(ArrayList<MiembroEnGrupo> meg) {
+        this.meg = meg;
+    }
+   
     public Grupo (String nombre, String descripcion)
     {
         this.nombre=nombre;
@@ -41,11 +64,6 @@ public class Grupo {
         else return false;
     }
     
-    public void verMiembros()
-    {
-        for(MiembroEnGrupo m: meg)
-            m.mostrarmiembro();
-    }
     
     public void agregarMiembro(Autor a, Rol r)
     {
@@ -57,7 +75,6 @@ public class Grupo {
         }
             
     }
-    
     
     public void quitarMiembro(Autor a)
     {

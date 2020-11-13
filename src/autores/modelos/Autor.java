@@ -19,25 +19,56 @@ public abstract class Autor {
         this.nombres=n;
         this.clave=c;
     }
-    
-    public void verNyA()
-    {
-        System.out.println("Nombre:"+nombres);
-        System.out.println("Apellido"+apellidos);
+
+    public int getDni() {
+        return dni;
     }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public ArrayList<MiembroEnGrupo> getMeg() {
+        return meg;
+    }
+
+    public void setMeg(ArrayList<MiembroEnGrupo> meg) {
+        this.meg = meg;
+    }
+   
     public void mostrar ()
     {
         System.out.println("["+dni+"]"+apellidos+", "+nombres);
-    }
-    
-    public void verGrupos()
-    {
         for(MiembroEnGrupo m: meg)
         {
-            m.mostrar();
+            System.out.println("\nPertenece al grupo: "+m.getGrupo().getNombre()+"\nRol: "+m.getRol());
         }
     }
-
+   
     @Override
     public int hashCode() {
         int hash = 7;
@@ -84,7 +115,7 @@ public abstract class Autor {
     {
         for(MiembroEnGrupo m: meg)
         {
-            if(m.verGrupo().esSuperAdministradores())
+            if(m.getGrupo().esSuperAdministradores())
             {
                 return true;
             }
