@@ -37,13 +37,10 @@ public class Publicacion {
     {
         System.out.println("Titulo: " +titulo);
         
-        System.out.print("Autor: ");
-        meg.mostrarmiembro();
+        System.out.print("Autor: "+meg.getAutor().getNombres()+","+meg.getAutor().getApellidos());
         
-        meg.verGrupo().mostrarNombre();
-        
-        meg.mostrarRol();
-        
+        System.out.println("Grupo:"+meg.getGrupo().getNombre()+"\nRol: "+meg.getRol());
+
         System.out.println("Fecha de publicacion: " +fechadepublicacion);
         
         System.out.print("Tipo: ");
