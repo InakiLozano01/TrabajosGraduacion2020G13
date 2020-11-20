@@ -6,20 +6,54 @@ import java.util.ArrayList;
 import palabrasclaves.modelos.PalabraClave;
 
 public class GestorLugares implements IGestorLugares {
+    
+    public ArrayList<Lugar> lugares = new ArrayList<>();
+    private static GestorLugares instance;
 
-    @Override
-    public String nuevaPalabraClave(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static GestorLugares crear(){
+        if(instance==null)
+            instance = new GestorLugares();
+        return instance;
     }
 
     @Override
-    public ArrayList<PalabraClave> verPalabrasClaves() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String nuevoLugar(String nombre) {
+        if(nombre!= null && nombre!="")
+        {
+            Lugar lugar = new Lugar (nombre);
+            if(!this.lugares.contains(lugar))
+            {
+                this.lugares.add(lugar);
+                return LUGAR_OK;
+            }else
+            {
+                return LUGAR_REPEAT;
+            }
+        }else
+        {
+            return LUGAR_ERROR;
+        }
+        
     }
 
     @Override
-    public PalabraClave verPalabraClave(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Lugar> verLugares() {
+        return lugares;
+        
     }
+
+    @Override
+    public Lugar verLugar(String nombre) {
+        for(Lugar lugar: lugares)
+        {
+            if(lugar.verNombre()==nombre)
+            {
+                return lugar;
+            }
+        }
+       return null;
+    }
+
+    
     
 }

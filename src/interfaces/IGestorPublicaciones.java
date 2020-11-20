@@ -12,6 +12,13 @@ import publicaciones.modelos.Publicacion;
 import tipos.modelos.Tipo;
 
 public interface IGestorPublicaciones {
+    
+    public static final String PUBLICACION_OK = "PUBLICACION GUARDADA";
+    public static final String PUBLICACION_REPEAT = "ERROR. LA PUBLICACION YA SE ENCUENTRA CARGADO";
+    public static final String PUBLICACION_ERROR = "NO SE HA PODIDO GUARDAR LA PUBLICACION, DATOS INVALIDOS";
+    public static final String PUBLICACION_MODIFIED = "PUBLICACION MODIFICADA CORRECTAMENTE";
+    public static final String PUBLICACION_NOTFOUND = "PUBLICACION NO ENCONTRADA";
+    
     public String nuevaPublicacion(String titulo, MiembroEnGrupo miembroEnGrupo,
 LocalDate fechaPublicacion, Tipo tipo, Idioma idioma, Lugar lugar,
 ArrayList<PalabraClave> palabrasClaves, String enlace, String resumen);

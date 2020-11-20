@@ -20,6 +20,80 @@ public class Publicacion {
     private ArrayList<PalabraClave> palabrasclaves;
     private String enlace;
     private String resumen;
+
+    public MiembroEnGrupo getMeg() {
+        return meg;
+    }
+
+    public void setMeg(MiembroEnGrupo meg) {
+        this.meg = meg;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public LocalDate getFechadepublicacion() {
+        return fechadepublicacion;
+    }
+
+    public void setFechadepublicacion(LocalDate fechadepublicacion) {
+        this.fechadepublicacion = fechadepublicacion;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public Idioma getIdioma() {
+        return idioma;
+    }
+
+    public void setIdioma(Idioma idioma) {
+        this.idioma = idioma;
+    }
+
+    public Lugar getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(Lugar lugar) {
+        this.lugar = lugar;
+    }
+
+    public ArrayList<PalabraClave> getPalabrasclaves() {
+        return palabrasclaves;
+    }
+
+    public void setPalabrasclaves(ArrayList<PalabraClave> palabrasclaves) {
+        this.palabrasclaves = palabrasclaves;
+    }
+
+    public String getEnlace() {
+        return enlace;
+    }
+
+    public void setEnlace(String enlace) {
+        this.enlace = enlace;
+    }
+
+    public String getResumen() {
+        return resumen;
+    }
+
+    public void setResumen(String resumen) {
+        this.resumen = resumen;
+    }
+    
+    
     
     public Publicacion(String t, MiembroEnGrupo meg, LocalDate fp, Tipo tip, Idioma i, Lugar l, ArrayList<PalabraClave> pc, String e, String r)
     {
