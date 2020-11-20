@@ -6,20 +6,50 @@ import java.util.ArrayList;
 
 
 public class GestorIdiomas implements IGestorIdiomas {
+    
+    public ArrayList<Idioma> idiomas = new ArrayList<>();
+    public static GestorIdiomas instance;
+    
+    public static GestorIdiomas crear(){
+        if(instance==null)
+            instance = new GestorIdiomas();
+        return instance;
+    }
 
     @Override
     public String nuevoIdioma(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(nombre!= null && nombre!="")
+        {
+            Idioma idioma = new Idioma (nombre);
+            if(!this.idiomas.contains(idioma))
+            {
+                this.idiomas.add(idioma);
+                return IDIOMA_OK;
+            }else
+            {
+                return IDIOMA_REPEAT;
+            }
+        }else
+        {
+            return IDIOMA_ERROR;
+        }
     }
 
     @Override
     public ArrayList<Idioma> verIdiomas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return idiomas;
     }
 
     @Override
     public Idioma verIdioma(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       for(Idioma idioma: idiomas)
+       {
+           if(idioma.verNombre()==nombre)
+           {
+               return idioma;
+           }
+       }
+       return null;
     }
     
 }
