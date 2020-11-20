@@ -11,6 +11,7 @@ public class GestorAutores implements IGestorAutores {
     private ArrayList<Autor> autores = new ArrayList<>();
     private ArrayList<Profesor> profesores = new ArrayList<>();
     private ArrayList<Alumno> alumnos = new ArrayList<>();
+    
     private static GestorAutores instance;
 
     public static GestorAutores crear(){

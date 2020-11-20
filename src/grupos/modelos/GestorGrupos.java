@@ -6,29 +6,75 @@ import java.util.ArrayList;
 
 public class GestorGrupos implements IGestorGrupos{
 
+    public ArrayList<Grupo> grupos = new ArrayList<>();
+    
+    private static GestorGrupos instance;
+
+    public static GestorGrupos crear(){
+        if(instance==null)
+            instance = new GestorGrupos();
+        return instance;
+    }
+    
+    
     @Override
     public String nuevoGrupo(String nombre, String descripcion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(nombre!=null && nombre!="")
+        {
+            Grupo grupo = new Grupo(nombre, descripcion);
+            if(!this.grupos.contains(grupo))
+            {
+                this.grupos.add(grupo);
+                return GRUPO_OK;
+            }
+            else
+            {
+               return GRUPO_REPEAT;
+            }
+        }
+        else
+        {
+            return GRUPO_ERROR;
+        }
     }
 
     @Override
     public String modificarGrupo(Grupo grupo, String descripcion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(grupo!=null && descripcion!=null && descripcion!="")
+        {
+            if(this.grupos.contains(grupo))
+            {
+                grupo.setDescripcion(descripcion);
+                return GRUPO_MODIFIED;
+            }
+            else
+            {
+                return GRUPO_NOTFOUND;
+            }
+        }
+        else
+        {
+            return GRUPO_ERROR;
+        }
     }
 
     @Override
     public ArrayList<Grupo> verGrupos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return grupos;
     }
 
     @Override
     public Grupo verGrupo(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(Grupo grupo: grupos){
+            if(grupo.getNombre()==nombre)
+                return grupo;
+        }
+        return null;
     }
 
     @Override
     public boolean existeEsteGrupo(Grupo grupo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return grupos.contains(grupo);
     }
     
 }
