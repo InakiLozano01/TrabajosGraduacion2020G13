@@ -1,14 +1,19 @@
 
 package tipos.modelos;
 
+import interfaces.IGestorPublicaciones;
 import interfaces.IGestorTipos;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import publicaciones.modelos.GestorPublicaciones;
+import publicaciones.modelos.Publicacion;
 
 
 public class GestorTipos implements IGestorTipos{
     
-    public ArrayList<Tipo> tipos = new ArrayList<> ();
+    public List<Tipo> tipos = new ArrayList<> ();
     
     private static GestorTipos instance;
 
@@ -40,25 +45,56 @@ public class GestorTipos implements IGestorTipos{
 
     @Override
     public String borrarTipo(Tipo tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+        IGestorPublicaciones gp= GestorPublicaciones.crear();
+        if(!gp.hayPublicacionesConEsteTipo(tipo))
+        {
+            tipos.remove(tipo);
+            return BORRAR_OK;
+        }
+        else
+        {
+            return BORRAR_ERROR;
+        }
     }
 
     @Override
     public List<Tipo> buscarTipos(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+      List<Tipo> tiposBuscar = new ArrayList<> ();
+      for(Tipo tipo: tipos)
+      {
+          if(tipo.verNombre().contains(nombre))
+          {
+              tiposBuscar.add(tipo);
+          }
+      }
+      Comparator<Tipo> ct = (t1, t2) -> t1.verNombre().compareTo(t2.verNombre());
+      tiposBuscar.sort(ct);
+      return tiposBuscar;
     }
 
     @Override
     public List<Tipo> verTipos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean existeEsteTipo(Tipo tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Comparator<Tipo> ct = (t1, t2) -> t1.verNombre().compareTo(t2.verNombre());
+        this.tipos.sort(ct);
+        return this.tipos;
     }
 
     
+    @Override
+    public boolean existeEsteTipo(Tipo tipo) {
+        
+        for(Tipo t: tipos)
+        {
+            if(t.equals(tipo))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     @Override
     public Tipo verTipo(String nombre) {

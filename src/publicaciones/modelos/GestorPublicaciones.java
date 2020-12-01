@@ -7,6 +7,7 @@ import idiomas.modelos.Idioma;
 import interfaces.IGestorPublicaciones;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import lugares.modelos.Lugar;
 import palabrasclaves.modelos.PalabraClave;
@@ -143,17 +144,42 @@ public class GestorPublicaciones implements IGestorPublicaciones {
 
     @Override
     public String borrarPublicacion(Publicacion publicacion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+       if(publicaciones.contains(publicacion))
+       {
+           publicaciones.remove(publicacion);
+           return BORRAR_OK;
+       }
+       else
+       {
+           return BORRAR_ERROR;
+       }
+        
+   
     }
 
     @Override
     public List<Publicacion> buscarPublicaciones(String titulo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        List<Publicacion> publicacionesBuscar = new ArrayList<> ();
+      for(Publicacion publicacion: publicaciones)
+      {
+          if(publicacion.getTitulo().contains(titulo))
+          {
+              publicacionesBuscar.add(publicacion);
+          }
+      }
+      Comparator<Publicacion> cp = (p1, p2) -> p1.getTitulo().compareTo(p2.getTitulo());
+      publicacionesBuscar.sort(cp);
+      return publicacionesBuscar;
     }
 
     @Override
     public List<Publicacion> verPublicaciones() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+       Comparator<Publicacion> cp = (p1, p2) -> p1.getTitulo().compareTo(p2.getTitulo());
+       this.publicaciones.sort(cp);
+       return this.publicaciones;
     }
 
     

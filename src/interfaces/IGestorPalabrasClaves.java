@@ -10,6 +10,8 @@ public interface IGestorPalabrasClaves {
     public static final String PALABRACLAVE_OK = "PALABRA CLAVE GUARDADA";
     public static final String PALABRACLAVE_REPEAT = "ERROR. LA PALABRA CLAVE YA SE ENCUENTRA CARGADO";
     public static final String PALABRACLAVE_ERROR = "NO SE HA PODIDO GUARDAR LA PALABRA CLAVE, DATOS INVALIDOS";
+    public static final String BORRAR_OK = "PALABRA BORRADA CORRECTAMENTE";
+    public static final String BORRAR_ERROR = "NO SE PUDO BORRAR ESTA PALABRA PORQUE UNA PUBLICACION LA UTILIZA";
     
     public String nuevaPalabraClave(String nombre);
     

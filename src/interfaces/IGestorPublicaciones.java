@@ -19,6 +19,8 @@ public interface IGestorPublicaciones {
     public static final String PUBLICACION_ERROR = "NO SE HA PODIDO GUARDAR LA PUBLICACION, DATOS INVALIDOS";
     public static final String PUBLICACION_MODIFIED = "PUBLICACION MODIFICADA CORRECTAMENTE";
     public static final String PUBLICACION_NOTFOUND = "PUBLICACION NO ENCONTRADA";
+    public static final String BORRAR_OK = "PUBLICACION BORRADA CORRECTAMENTE";
+    public static final String BORRAR_ERROR = "NO SE PUDO BORRAR ESTA PUBLICACION PORQUE NO EXISTE";
     
     public String nuevaPublicacion(String titulo, MiembroEnGrupo miembroEnGrupo,
 LocalDate fechaPublicacion, Tipo tipo, Idioma idioma, Lugar lugar,
