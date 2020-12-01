@@ -3,6 +3,7 @@ package lugares.modelos;
 
 import interfaces.IGestorLugares;
 import java.util.ArrayList;
+import java.util.List;
 import palabrasclaves.modelos.PalabraClave;
 
 public class GestorLugares implements IGestorLugares {
@@ -37,10 +38,26 @@ public class GestorLugares implements IGestorLugares {
     }
 
     @Override
-    public ArrayList<Lugar> verLugares() {
-        return lugares;
-        
+    public String borrarLugar(Lugar lugar) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Lugar> buscarLugares(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Lugar> verLugares() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean existeEsteLugar(Lugar lugar) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
     @Override
     public Lugar verLugar(String nombre) {

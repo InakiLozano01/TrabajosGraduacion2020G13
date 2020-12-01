@@ -3,6 +3,7 @@ package idiomas.modelos;
 
 import interfaces.IGestorIdiomas;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class GestorIdiomas implements IGestorIdiomas {
@@ -36,9 +37,26 @@ public class GestorIdiomas implements IGestorIdiomas {
     }
 
     @Override
-    public ArrayList<Idioma> verIdiomas() {
-        return idiomas;
+    public String borrarIdioma(Idioma idioma) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Idioma> buscarIdiomas(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Idioma> verIdiomas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean existeEsteIdioma(Idioma idioma) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
     @Override
     public Idioma verIdioma(String nombre) {

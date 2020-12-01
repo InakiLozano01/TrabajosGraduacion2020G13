@@ -3,6 +3,7 @@ package palabrasclaves.modelos;
 
 import interfaces.IGestorPalabrasClaves;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class GestorPalabrasClaves implements IGestorPalabrasClaves {
@@ -39,10 +40,26 @@ public class GestorPalabrasClaves implements IGestorPalabrasClaves {
     }
 
     @Override
-    public ArrayList<PalabraClave> verPalabrasClaves() {
-        return palabrasClaves;
-       
+    public String borrarPalabraClave(PalabraClave palabraClave) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<PalabraClave> buscarPalabrasClaves(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<PalabraClave> verPalabrasClaves() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean existeEstaPalabraClave(PalabraClave palabraClave) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
     @Override
     public PalabraClave verPalabraClave(String nombre) {

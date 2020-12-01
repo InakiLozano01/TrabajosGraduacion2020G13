@@ -3,6 +3,7 @@ package tipos.modelos;
 
 import interfaces.IGestorTipos;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class GestorTipos implements IGestorTipos{
@@ -38,11 +39,26 @@ public class GestorTipos implements IGestorTipos{
     }
 
     @Override
-    public ArrayList<Tipo> verTipos() {
-        
-        return tipos;
-      
+    public String borrarTipo(Tipo tipo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Tipo> buscarTipos(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Tipo> verTipos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean existeEsteTipo(Tipo tipo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
     @Override
     public Tipo verTipo(String nombre) {
