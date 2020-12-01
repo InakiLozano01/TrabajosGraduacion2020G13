@@ -11,6 +11,8 @@ public interface IGestorIdiomas {
     public static final String IDIOMA_OK = "IDIOMA GUARDADO";
     public static final String IDIOMA_REPEAT = "ERROR. EL IDIOMA YA SE ENCUENTRA CARGADO";
     public static final String IDIOMA_ERROR = "NO SE HA PODIDO GUARDAR EL IDIOMA, DATOS INVALIDOS";
+    public static final String BORRAR_OK = "IDIOMA BORRADO CORRECTAMENTE";
+    public static final String BORRAR_ERROR = "NO SE PUDO BORRAR ESTE IDIOMA PORQUE UNA PUBLICACION LO UTILIZA";
     
     public String nuevoIdioma(String nombre);
     

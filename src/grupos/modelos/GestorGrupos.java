@@ -1,13 +1,16 @@
 
 package grupos.modelos;
 
+import autores.modelos.GestorAutores;
+import interfaces.IGestorAutores;
 import interfaces.IGestorGrupos;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class GestorGrupos implements IGestorGrupos{
 
-    public ArrayList<Grupo> grupos = new ArrayList<>();
+    public List<Grupo> grupos = new ArrayList<>();
     
     private static GestorGrupos instance;
 
@@ -61,23 +64,40 @@ public class GestorGrupos implements IGestorGrupos{
 
     @Override
     public String borrarGrupo(Grupo grupo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IGestorAutores ga = GestorAutores.crear();
+        if(!ga.hayAutoresConEsteGrupo(grupo))
+        {
+            grupos.remove(grupo);
+            return BORRAR_OK;
+        }
+        else
+        {
+            return BORRAR_ERROR;
+        }
     }
 
     @Override
     public List<Grupo> verGrupos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Comparator<Grupo> cg = (g1, g2) -> g1.getNombre().compareTo(g2.getNombre());
+        this.grupos.sort(cg);
+        return this.grupos;
     }
 
     
 
     @Override
-    public Grupo buscarGrupos(String nombre) {
-        for(Grupo grupo: grupos){
-            if(grupo.getNombre()==nombre)
-                return grupo;
-        }
-        return null;
+    public List<Grupo> buscarGrupos(String nombre) {
+      List<Grupo> gruposBuscar = new ArrayList<> ();
+      for(Grupo grupo: grupos)
+      {
+          if(grupo.getNombre().contains(nombre))
+          {
+              gruposBuscar.add(grupo);
+          }
+      }
+      Comparator<Grupo> cg = (g1, g2) -> g1.getNombre().compareTo(g2.getNombre());
+      gruposBuscar.sort(cg);
+      return gruposBuscar;
     }
 
     @Override

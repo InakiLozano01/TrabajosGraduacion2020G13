@@ -11,6 +11,8 @@ public interface IGestorLugares {
     public static final String LUGAR_OK = "LUGAR GUARDADO";
     public static final String LUGAR_REPEAT = "ERROR. EL LUGAR YA SE ENCUENTRA CARGADO";
     public static final String LUGAR_ERROR = "NO SE HA PODIDO GUARDAR EL LUGAR, DATOS INVALIDOS";
+    public static final String BORRAR_OK = "Lugar BORRADO CORRECTAMENTE";
+    public static final String BORRAR_ERROR = "NO SE PUDO BORRAR ESTE LUGAR PORQUE UNA PUBLICACION LO UTILIZA";
     
     public String nuevoLugar(String nombre);
     

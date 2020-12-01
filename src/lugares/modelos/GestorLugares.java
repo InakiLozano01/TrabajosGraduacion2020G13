@@ -2,13 +2,16 @@
 package lugares.modelos;
 
 import interfaces.IGestorLugares;
+import interfaces.IGestorPublicaciones;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import palabrasclaves.modelos.PalabraClave;
+import publicaciones.modelos.GestorPublicaciones;
 
 public class GestorLugares implements IGestorLugares {
     
-    public ArrayList<Lugar> lugares = new ArrayList<>();
+    public List<Lugar> lugares = new ArrayList<>();
     private static GestorLugares instance;
 
     public static GestorLugares crear(){
@@ -39,22 +42,43 @@ public class GestorLugares implements IGestorLugares {
 
     @Override
     public String borrarLugar(Lugar lugar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IGestorPublicaciones gp= GestorPublicaciones.crear();
+        if(!gp.hayPublicacionesConEsteLugar(lugar))
+        {
+            lugares.remove(lugar);
+            return BORRAR_OK;
+        }
+        else
+        {
+            return BORRAR_ERROR;
+        }
     }
 
     @Override
     public List<Lugar> buscarLugares(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Lugar> lugaresBuscar = new ArrayList<> ();
+      for(Lugar lugar: lugares)
+      {
+          if(lugar.verNombre().contains(nombre))
+          {
+              lugaresBuscar.add(lugar);
+          }
+      }
+      Comparator<Lugar> cl = (l1, l2) -> l1.verNombre().compareTo(l2.verNombre());
+      lugaresBuscar.sort(cl);
+      return lugaresBuscar;
     }
 
     @Override
     public List<Lugar> verLugares() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Comparator<Lugar> cl = (l1, l2) -> l1.verNombre().compareTo(l2.verNombre());
+        this.lugares.sort(cl);
+        return this.lugares;
     }
 
     @Override
     public boolean existeEsteLugar(Lugar lugar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.lugares.contains(lugar);
     }
 
     

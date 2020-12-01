@@ -83,15 +83,7 @@ public class GestorPalabrasClaves implements IGestorPalabrasClaves {
 
     @Override
     public boolean existeEstaPalabraClave(PalabraClave palabraClave) {
-        
-        for(PalabraClave pc: palabrasClaves)
-        {
-            if(pc.equals(palabraClave))
-            {
-                return true;
-            }
-        }
-        return false;
+        return this.palabrasClaves.contains(palabraClave);
     }
 
     

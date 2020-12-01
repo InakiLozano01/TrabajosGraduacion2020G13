@@ -2,13 +2,16 @@
 package idiomas.modelos;
 
 import interfaces.IGestorIdiomas;
+import interfaces.IGestorPublicaciones;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import publicaciones.modelos.GestorPublicaciones;
 
 
 public class GestorIdiomas implements IGestorIdiomas {
     
-    public ArrayList<Idioma> idiomas = new ArrayList<>();
+    public List<Idioma> idiomas = new ArrayList<>();
     public static GestorIdiomas instance;
     
     public static GestorIdiomas crear(){
@@ -38,22 +41,44 @@ public class GestorIdiomas implements IGestorIdiomas {
 
     @Override
     public String borrarIdioma(Idioma idioma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IGestorPublicaciones gp= GestorPublicaciones.crear();
+        if(!gp.hayPublicacionesConEsteIdioma(idioma))
+        {
+            idiomas.remove(idioma);
+            return BORRAR_OK;
+        }
+        else
+        {
+            return BORRAR_ERROR;
+        }
+        
     }
 
     @Override
     public List<Idioma> buscarIdiomas(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Idioma> idiomasBuscar = new ArrayList<> ();
+      for(Idioma idioma: idiomas)
+      {
+          if(idioma.verNombre().contains(nombre))
+          {
+              idiomasBuscar.add(idioma);
+          }
+      }
+      Comparator<Idioma> ci = (i1, i2) -> i1.verNombre().compareTo(i2.verNombre());
+      idiomasBuscar.sort(ci);
+      return idiomasBuscar;
     }
 
     @Override
     public List<Idioma> verIdiomas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Comparator<Idioma> ci = (i1, i2) -> i1.verNombre().compareTo(i2.verNombre());
+        this.idiomas.sort(ci);
+        return this.idiomas;
     }
 
     @Override
     public boolean existeEsteIdioma(Idioma idioma) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.idiomas.contains(idioma);
     }
 
     

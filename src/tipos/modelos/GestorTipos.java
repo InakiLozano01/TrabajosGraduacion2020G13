@@ -45,8 +45,7 @@ public class GestorTipos implements IGestorTipos{
 
     @Override
     public String borrarTipo(Tipo tipo) {
-       
-        IGestorPublicaciones gp= GestorPublicaciones.crear();
+       IGestorPublicaciones gp= GestorPublicaciones.crear();
         if(!gp.hayPublicacionesConEsteTipo(tipo))
         {
             tipos.remove(tipo);
@@ -56,6 +55,7 @@ public class GestorTipos implements IGestorTipos{
         {
             return BORRAR_ERROR;
         }
+        
     }
 
     @Override
@@ -85,15 +85,7 @@ public class GestorTipos implements IGestorTipos{
     
     @Override
     public boolean existeEsteTipo(Tipo tipo) {
-        
-        for(Tipo t: tipos)
-        {
-            if(t.equals(tipo))
-            {
-                return true;
-            }
-        }
-        return false;
+        return this.tipos.contains(tipo);
     }
 
     @Override

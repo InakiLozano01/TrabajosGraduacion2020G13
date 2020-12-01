@@ -130,6 +130,11 @@ public abstract class Autor {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return (apellidos+", "+nombres);
+    }
     
     
 }

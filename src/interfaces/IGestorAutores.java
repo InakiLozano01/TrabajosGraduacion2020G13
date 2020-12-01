@@ -15,6 +15,7 @@ public interface IGestorAutores {
     public static final String AUTOR_MODIFIED = "AUTOR MODIFICADO CORRECTAMENTE";
     public static final String AUTOR_NOTFOUND = "AUTOR NO ENCONTRADO";
     public static final String BORRAR_OK = "AUTOR BORRADO CORRECTAMENTE";
+    public static final String BORRAR_ERROR = "NO SE PUDO BORRAR ESTE AUTOR PORQUE PERTENECE A UNA PUBLICACION";
     
 public String nuevoAutor(int dni, String apellidos, String nombres, Cargo cargo, 
 String clave, String claveRepetida);
@@ -28,9 +29,7 @@ cargo, String clave, String claveRepetida);
 public String modificarAutor(Autor autor, String apellidos, String nombres, String
 cx, String clave, String claveRepetida);
 
-public String borrarProfesores (Autor profesor);
-        
-public String borrarAlumnos (Autor alumno);
+
         
 public boolean existeEsteAutor(Autor autor);
 public Autor verAutor(int dni);

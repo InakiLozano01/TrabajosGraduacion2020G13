@@ -12,6 +12,8 @@ public interface IGestorGrupos {
     public static final String GRUPO_ERROR = "NO SE HA PODIDO GUARDAR EL GRUPO, DATOS INVALIDOS";
     public static final String GRUPO_MODIFIED = "GRUPO MODIFICADO CORRECTAMENTE";
     public static final String GRUPO_NOTFOUND = "GRUPO NO ENCONTRADO";
+    public static final String BORRAR_OK = "GRUPO BORRADO CORRECTAMENTE";
+    public static final String BORRAR_ERROR = "NO SE PUDO BORRAR ESTE GRUPO PORQUE UN AUTOR PERTENECE A EL";
     
     
     public String nuevoGrupo(String nombre, String descripcion);
@@ -19,7 +21,7 @@ public interface IGestorGrupos {
 public String modificarGrupo(Grupo grupo, String descripcion);
 
 
-public Grupo buscarGrupos(String nombre);
+public List<Grupo> buscarGrupos(String nombre);
 public boolean existeEsteGrupo(Grupo grupo);
 public String borrarGrupo(Grupo grupo);
 public List<Grupo> verGrupos();

@@ -2,17 +2,21 @@
 package autores.modelos;
 
 import grupos.modelos.Grupo;
+import grupos.modelos.MiembroEnGrupo;
 import interfaces.IGestorAutores;
+import interfaces.IGestorPublicaciones;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import publicaciones.modelos.GestorPublicaciones;
 
 
 public class GestorAutores implements IGestorAutores {
     
 
-    private ArrayList<Autor> autores = new ArrayList<>();
-    private ArrayList<Profesor> profesores = new ArrayList<>();
-    private ArrayList<Alumno> alumnos = new ArrayList<>();
+    private List<Autor> autores = new ArrayList<>();
+    private List<Profesor> profesores = new ArrayList<>();
+    private List<Alumno> alumnos = new ArrayList<>();
     
     private static GestorAutores instance;
 
@@ -97,37 +101,87 @@ public class GestorAutores implements IGestorAutores {
 
     @Override
     public String borrarAutor(Autor autor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        IGestorPublicaciones gp= GestorPublicaciones.crear();
+        if(!gp.hayPublicacionesConEsteAutor(autor))
+        {
+            autores.remove(autor);
+            
+            if(alumnos.contains(autor))
+                alumnos.remove(autor);
+            else if(profesores.contains(autor))
+                profesores.remove(autor);
+            
+            return BORRAR_OK;
+        }
+        else
+        {
+            return BORRAR_ERROR;
+        }
+
     }
 
     @Override
     public List<Profesor> buscarProfesores(String apellidos) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      List<Profesor> profesoresBuscar = new ArrayList<> ();
+      for(Profesor profesor: profesores)
+      {
+          if(profesor.getApellidos().contains(apellidos))
+          {
+              profesoresBuscar.add(profesor);
+          }
+      }
+      Comparator<Profesor> cp = (p1, p2) -> p1.toString().compareTo(p2.toString());
+      profesoresBuscar.sort(cp);
+      return profesoresBuscar;
     }
 
     @Override
     public List<Alumno> buscarAlumnos(String apellidos) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      List<Alumno> alumnosBuscar = new ArrayList<> ();
+      for(Alumno alumno: alumnos)
+      {
+          if(alumno.getApellidos().contains(apellidos))
+          {
+              alumnosBuscar.add(alumno);
+          }
+      }
+      Comparator<Alumno> ca = (a1, a2) -> a1.toString().compareTo(a2.toString());
+      alumnosBuscar.sort(ca);
+      return alumnosBuscar;
     }
 
     @Override
     public List<Autor> verAutores() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Comparator<Autor> ca = (a1, a2) -> a1.toString().compareTo(a2.toString());
+        this.autores.sort(ca);
+        return this.autores;
     }
 
     @Override
     public List<Profesor> verProfesores() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Comparator<Profesor> cp = (p1, p2) -> p1.toString().compareTo(p2.toString());
+        this.profesores.sort(cp);
+        return this.profesores;
     }
 
     @Override
     public List<Alumno> verAlumnos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Comparator<Alumno> ca = (a1, a2) -> a1.toString().compareTo(a2.toString());
+        this.alumnos.sort(ca);
+        return this.alumnos;
     }
 
     @Override
     public boolean hayAutoresConEsteGrupo(Grupo grupo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(Autor autor: autores)
+        {
+            for(MiembroEnGrupo meg: autor.getMeg())
+            {
+                if(meg.getGrupo().equals(grupo))
+                    return true;
+            }
+        }
+        return false;
     }
 
 
@@ -141,28 +195,5 @@ public class GestorAutores implements IGestorAutores {
     return null; 
     }
     
-
-    @Override
-    public String borrarProfesores(Autor profesor) {
-         if(profesores.contains(profesor)){
-        profesores.remove(profesor);
-        autores.remove(profesor);
-            return BORRAR_OK;
-                
-        }
-        else return AUTOR_NOTFOUND;
-        
-    }
-
-    @Override
-    public String borrarAlumnos(Autor alumno) {
-        if(alumnos.contains(alumno)){
-        alumnos.remove(alumno);
-        autores.remove(alumno);
-            return BORRAR_OK;
-                
-        }
-        else return AUTOR_NOTFOUND;
-    }
 
 }
