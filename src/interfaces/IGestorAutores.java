@@ -2,7 +2,9 @@
 package interfaces;
 
 import autores.modelos.*;
+import grupos.modelos.Grupo;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public interface IGestorAutores {
@@ -31,9 +33,14 @@ public String borrarProfesores (Autor profesor);
 public String borrarAlumnos (Autor alumno);
         
 public boolean existeEsteAutor(Autor autor);
-public ArrayList<Autor> verAutores();
-public ArrayList<Profesor> verProfesores();
-public ArrayList<Alumno> verAlumnos();
 public Autor verAutor(int dni);
+
+public String borrarAutor(Autor autor);
+public List<Profesor> buscarProfesores(String apellidos);
+public List<Alumno> buscarAlumnos(String apellidos);
+public List<Autor> verAutores();
+public List<Profesor> verProfesores();
+public List<Alumno> verAlumnos();
+public boolean hayAutoresConEsteGrupo(Grupo grupo);
     
 }

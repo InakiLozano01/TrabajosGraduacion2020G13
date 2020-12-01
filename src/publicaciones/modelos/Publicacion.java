@@ -6,6 +6,7 @@ import grupos.modelos.Rol;
 import idiomas.modelos.Idioma;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import lugares.modelos.Lugar;
 import palabrasclaves.modelos.PalabraClave;
 import tipos.modelos.Tipo;
@@ -17,7 +18,7 @@ public class Publicacion {
     private Tipo tipo;
     private Idioma idioma;
     private Lugar lugar;
-    private ArrayList<PalabraClave> palabrasclaves;
+    private List<PalabraClave> palabrasclaves;
     private String enlace;
     private String resumen;
 
@@ -69,11 +70,11 @@ public class Publicacion {
         this.lugar = lugar;
     }
 
-    public ArrayList<PalabraClave> getPalabrasclaves() {
+    public List<PalabraClave> getPalabrasclaves() {
         return palabrasclaves;
     }
 
-    public void setPalabrasclaves(ArrayList<PalabraClave> palabrasclaves) {
+    public void setPalabrasclaves(List<PalabraClave> palabrasclaves) {
         this.palabrasclaves = palabrasclaves;
     }
 
@@ -95,7 +96,7 @@ public class Publicacion {
     
     
     
-    public Publicacion(String t, MiembroEnGrupo meg, LocalDate fp, Tipo tip, Idioma i, Lugar l, ArrayList<PalabraClave> pc, String e, String r)
+    public Publicacion(String t, MiembroEnGrupo meg, LocalDate fp, Tipo tip, Idioma i, Lugar l, List<PalabraClave> pc, String e, String r)
     {
         this.titulo=t;
         this.meg=meg;

@@ -7,6 +7,7 @@ import idiomas.modelos.Idioma;
 import interfaces.IGestorPublicaciones;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import lugares.modelos.Lugar;
 import palabrasclaves.modelos.PalabraClave;
 import tipos.modelos.Tipo;
@@ -23,7 +24,7 @@ public class GestorPublicaciones implements IGestorPublicaciones {
         return instance;
     }
     @Override
-    public String nuevaPublicacion(String titulo, MiembroEnGrupo miembroEnGrupo, LocalDate fechaPublicacion, Tipo tipo, Idioma idioma, Lugar lugar, ArrayList<PalabraClave> palabrasClaves, String enlace, String resumen) {
+    public String nuevaPublicacion(String titulo, MiembroEnGrupo miembroEnGrupo, LocalDate fechaPublicacion, Tipo tipo, Idioma idioma, Lugar lugar, List<PalabraClave> palabrasClaves, String enlace, String resumen) {
         
         if(titulo!=null && titulo!="" && miembroEnGrupo!=null && fechaPublicacion!= null && tipo!=null && idioma!=null && lugar!=null && palabrasClaves!=null && palabrasClaves.size()!=0 && enlace!= null && enlace!="" && resumen!=null && resumen!="")
         {
@@ -43,7 +44,7 @@ public class GestorPublicaciones implements IGestorPublicaciones {
     }
 
     @Override
-    public String modificarPublicacion(Publicacion publicacion, MiembroEnGrupo miembroEnGrupo, LocalDate fechaPublicacion, Tipo tipo, Idioma idioma, Lugar lugar, ArrayList<PalabraClave> palabrasClaves, String enlace, String resumen) {
+    public String modificarPublicacion(Publicacion publicacion, MiembroEnGrupo miembroEnGrupo, LocalDate fechaPublicacion, Tipo tipo, Idioma idioma, Lugar lugar, List<PalabraClave> palabrasClaves, String enlace, String resumen) {
         
         if(publicacion!= null && miembroEnGrupo!=null && fechaPublicacion!= null && tipo!=null && idioma!=null && lugar!=null && palabrasClaves!=null && palabrasClaves.size()!=0 && enlace!= null && enlace!="" && resumen!=null && resumen!="")
         {
@@ -141,9 +142,21 @@ public class GestorPublicaciones implements IGestorPublicaciones {
     }
 
     @Override
-    public ArrayList<Publicacion> verPublicaciones() {
-       return publicaciones;
+    public String borrarPublicacion(Publicacion publicacion) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Publicacion> buscarPublicaciones(String titulo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Publicacion> verPublicaciones() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
     @Override
     public Publicacion verPublicacion(String titulo) {

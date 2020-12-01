@@ -3,6 +3,7 @@ package interfaces;
 
 import grupos.modelos.Grupo;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public interface IGestorGrupos {
@@ -17,7 +18,9 @@ public interface IGestorGrupos {
     
 public String modificarGrupo(Grupo grupo, String descripcion);
 
-public ArrayList<Grupo> verGrupos();
-public Grupo verGrupo(String nombre);
+
+public Grupo buscarGrupos(String nombre);
 public boolean existeEsteGrupo(Grupo grupo);
+public String borrarGrupo(Grupo grupo);
+public List<Grupo> verGrupos();
 }

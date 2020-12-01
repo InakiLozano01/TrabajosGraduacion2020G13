@@ -3,6 +3,7 @@ package grupos.modelos;
 
 import interfaces.IGestorGrupos;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GestorGrupos implements IGestorGrupos{
 
@@ -59,12 +60,19 @@ public class GestorGrupos implements IGestorGrupos{
     }
 
     @Override
-    public ArrayList<Grupo> verGrupos() {
-        return grupos;
+    public String borrarGrupo(Grupo grupo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Grupo verGrupo(String nombre) {
+    public List<Grupo> verGrupos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+
+    @Override
+    public Grupo buscarGrupos(String nombre) {
         for(Grupo grupo: grupos){
             if(grupo.getNombre()==nombre)
                 return grupo;

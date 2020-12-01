@@ -1,8 +1,10 @@
 
 package autores.modelos;
 
+import grupos.modelos.Grupo;
 import interfaces.IGestorAutores;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class GestorAutores implements IGestorAutores {
@@ -94,19 +96,41 @@ public class GestorAutores implements IGestorAutores {
     }
 
     @Override
-    public ArrayList<Autor> verAutores() {
-        return autores;
+    public String borrarAutor(Autor autor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public ArrayList<Profesor> verProfesores() {
-        return profesores;
+    public List<Profesor> buscarProfesores(String apellidos) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public ArrayList<Alumno> verAlumnos() {
-        return alumnos;
+    public List<Alumno> buscarAlumnos(String apellidos) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Autor> verAutores() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Profesor> verProfesores() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Alumno> verAlumnos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean hayAutoresConEsteGrupo(Grupo grupo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 
     @Override
     public Autor verAutor(int dni) {
